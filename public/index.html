@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clo_eTalk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💬 Clo_eTalk</h1>
+        <div class="progress" id="header-progress">Q 1/3</div>
+    </header>
+
+    <div id="question-banner" class="hidden">
+        ❓ <span id="banner-question-text">Tell me about your favorite cafe.</span>
+    </div>
+
+    <main id="app-container">
+        <div class="qlue-container" id="qlue-container">
+            <div class="qlue-avatar"><span class="qlue-face">[ 📦? ]</span></div>
+            <div class="qlue-bubble" id="qlue-message">
+                "인터뷰 설정을 완료하고 대화를 시작해 보세요!"
+            </div>
+        </div>
+
+        <section id="view-0-settings" class="view active">
+            <div class="correction-card">
+                <h2 style="margin-bottom: 15px; color: #2c3e50;">⚙️ 인터뷰 설정</h2>
+                <label style="display:block; margin-bottom:8px; font-weight:bold;">💡 나의 관심사 (예: 여행, 테크, 요리)</label>
+                <input type="text" id="settings-interests" class="practice-input" style="text-align:left;" placeholder="예: travel, coffee, movie">
+                
+                <label style="display:block; margin-top:15px; margin-bottom:8px; font-weight:bold;">🔄 문장 반복 학습 횟수</label>
+                <select id="settings-reps" class="practice-input" style="height:55px;">
+                    <option value="2" selected>2회 반복 (빠른 테스트)</option>
+                    <option value="3">3회 반복</option>
+                    <option value="5">5회 반복 (추천)</option>
+                </select>
+            </div>
+            <button id="btn-save-settings" class="action-btn" style="background-color:#2ecc71;">🎯 설정 완료 및 인터뷰 시작</button>
+        </section>
+
+        <section id="view-1-input" class="view hidden">
+            <textarea id="user-answer" placeholder="영어로 답변을 입력해보세요..."></textarea>
+            <button id="btn-submit" class="action-btn">🚀 제출하기</button>
+            <div id="loading-spinner" class="hidden"><p>Qlue가 문장을 분석하고 있어요... ⏳</p></div>
+        </section>
+
+        <section id="view-2-builder" class="view hidden">
+            <div class="correction-card">
+                <h3>🔴 내 원본</h3><p id="text-original"></p><hr>
+                <h3>🟢 AI 추천 교정본</h3><p id="text-corrected"></p>
+            </div>
+            <div id="alternatives-container"></div>
+            <button id="btn-start-practice" class="action-btn">➡️ 이 문장으로 연습 시작!</button>
+        </section>
+
+        <section id="view-3-typing" class="view hidden">
+            <div class="instruction-box">
+                <h3>👀 [상단 가이드 문장]</h3>
+                <div class="target-display guide-mode" id="v3-guide-display"></div>
+            </div>
+            <div class="practice-box">
+                <h3>✍️ [그대로 따라 타이핑하세요]</h3>
+                <div class="target-display" id="v3-input-display">
+                    <span id="v3-prefix"></span>
+                    <input type="text" id="v3-input" class="inline-input" autocomplete="off">
+                    <span id="v3-suffix"></span>
+                </div>
+                <div class="progress-bar-text" id="v3-progress">Progress: 1 / 2회</div>
+            </div>
+        </section>
+
+        <section id="view-4-hangman-word" class="view hidden">
+            <div class="instruction-box">
+                <h3>🧩 [빈칸 알맞은 표현 채우기]</h3>
+                <div class="target-display guide-mode" id="v4-guide-display"></div>
+            </div>
+            <div class="practice-box">
+                <h3>✍️ [빈칸에 들어갈 말을 입력하세요]</h3>
+                <div class="target-display" id="v4-input-display">
+                    <span id="v4-prefix"></span>
+                    <input type="text" id="v4-input" class="inline-input" autocomplete="off">
+                    <span id="v4-suffix"></span>
+                </div>
+                <button id="btn-check-word" class="action-btn">✔️ 정답 확인</button>
+                <div class="progress-bar-text" id="v4-progress">Progress: 1 / 2회</div>
+            </div>
+        </section>
+
+        <section id="view-5-hangman-sentence" class="view hidden">
+            <div class="instruction-box">
+                <h3>🗺️ [전체 문장 암기해서 완성하기]</h3>
+                <div class="target-display" id="v5-full-sentence"></div>
+            </div>
+            <div class="practice-box">
+                <textarea id="v5-input" class="practice-input" rows="3" placeholder="전체 문장을 타이핑해보세요. 틀리면 맞은 곳까지 채워집니다!"></textarea>
+                <button id="btn-check-sentence" class="action-btn">✔️ 최종 제출</button>
+            </div>
+        </section>
+
+        <section id="view-6-summary" class="view hidden">
+            <div class="correction-card" style="text-align: center;">
+                <h2>🎉 Session Complete!</h2>
+                <p style="margin-top: 15px; color: #7f8c8d;">오늘 마스터한 문장</p>
+                <p id="summary-final-sentence" style="font-weight: bold; color: #2c3e50; font-size: 1.2rem;"></p>
+            </div>
+            <button id="btn-next-question" class="action-btn">➡️ 다음 질문으로 넘어가기</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

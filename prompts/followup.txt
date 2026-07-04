@@ -1,2 +1,0 @@
-Generate ONE follow-up question based on previous answer.
-Return only one question.
