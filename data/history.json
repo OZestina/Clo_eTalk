@@ -1,0 +1,28 @@
+//{
+//   "session_id": "20260704_001",
+//   "question_id": "travel_001",
+
+//   "question": "What is your favorite travel destination?",
+
+//   "answers": [
+//     "I go Japan last year.",
+//     "It very fun."
+//   ],
+
+//   "correction": {},
+
+//   "selected": [],
+
+//   "final_sentence": "",
+
+//   "followups": [
+//     {
+//       "q": "Why did you choose Japan?",
+//       "a": "Because..."
+//     }
+//   ]
+// }
+
+{
+  "sessions": []
+}

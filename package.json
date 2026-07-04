@@ -1,0 +1,25 @@
+{
+  "name": "clo_etalk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OZestina/Clo_eTalk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OZestina/Clo_eTalk/issues"
+  },
+  "homepage": "https://github.com/OZestina/Clo_eTalk#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "chalk": "^4.1.2",
+    "node-fetch": "^3.3.2"
+  }
+}

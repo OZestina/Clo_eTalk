@@ -1,0 +1,19 @@
+Return STRICT JSON.
+
+Input:
+{{input}}
+
+Output:
+{
+  "corrections": [
+    {
+      "original": "",
+      "easy": "",
+      "medium": "",
+      "natural": ""
+    }
+  ],
+  "sentences": {
+    "medium": ""
+  }
+}
